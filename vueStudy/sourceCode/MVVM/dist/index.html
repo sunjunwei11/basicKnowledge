@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MVVM</title>
+    <style>
+        .red {
+            color: red
+        }
+        .purple {
+            color: purple
+        }
+    </style>
+</head>
+<body>
+
+<div id="mvvm-app">
+    <div>
+        <input id="input1" v-model="inputParam1">
+        <p v-class="classParam1" class="notReactive">{{ param1 }}</p>
+        <p>{{ param2 }}</p>
+        <div v-html="htmlParam1"></div>
+        <p v-on:click="sing">唱歌</p>
+        <p> {{ getHelloWord }} </p>
+    </div>
+</div>
+
+<script src="./dist/MVVM.bundle.js"></script>
+<script>
+    var vm = new MVVM({
+        el: '#mvvm-app',
+        data: {
+            param1: 'hello ',
+            param2: 'world',
+            classParam1: 'red',
+            inputParam1: '666',
+            htmlParam1: '<p style=color:pink>这是html</p>'
+        },
+
+        computed: {
+            getHelloWord: function() {
+                return this.param1 + this.param2 + this.inputParam1;
+            }
+        },
+
+        methods: {
+            sing () {
+                console.log('啦啦啦啦啦啦');
+            }
+        }
+    });
+</script>
+
+</body>
+</html>

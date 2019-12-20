@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>border radius</title>
+    <style>
+        .radius-wrap {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .div1 {
+            margin: 20px;
+            width: 200px;
+            height: 100px;
+            background-color: pink;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+        }
+        .div2 {
+            width: 200px;
+            height: 300px;
+        }
+        .radius-1 {
+            border-radius: 50%;
+        }
+        .radius-1-1 {
+            border-radius: 100%;
+        }
+        .radius-2 {
+            border-top-left-radius: 50%;
+        }
+        .radius-3 {
+            border-top-left-radius: 100%;
+        }
+        .radius-4 {
+            border-top-left-radius: 50%;
+            border-top-right-radius: 50%;
+        }
+        .radius-5 {
+            border-top-left-radius: 100px;
+            border-top-right-radius: 100px;
+        }
+        .radius-6 {
+            border-top-left-radius: 200px 100px;
+        }
+        .radius-7 {
+            border-top-left-radius: 200px 50px;
+        }
+        .radius-8 {
+            border-top-left-radius: 200px 50px;
+            border-bottom-left-radius: 200px 50px;
+        }
+        .radius-9 {
+            border-top-right-radius: 200px 50px;
+            border-bottom-right-radius: 200px 50px;
+        }
+        .radius-10 {
+            border-top-left-radius: 200px 150px;
+            border-bottom-left-radius: 200px 150px;
+        }
+        .radius-11 {
+            border-top-right-radius: 200px 150px;
+            border-bottom-right-radius: 200px 150px;
+            border: 30px solid purple
+        }
+        .radius-11-1 {
+            box-sizing: border-box;
+            border-top-right-radius: 200px 150px;
+            border-bottom-right-radius: 200px 150px;
+            border: 30px solid purple
+        }
+        .radius-12 {
+            border-top-right-radius: 215px 165px;
+            border-bottom-right-radius: 215px 165px;
+            border: 30px solid purple
+        }
+    </style>
+</head>
+<body>
+    <p>要设置圆弧，将border-top-right-radius的第一个参数设置为椭圆的横轴半径，将border-top-right-radius第二个参数设置为纵轴半径</p>
+    <p>设置半径的时候要把border也算进去，最好直接设置box-sizing为border-box</p>
+    <div class="radius-wrap">
+        <div class="div1 radius-1">
+            <p>border-radius: 50%;</p> 
+        </div>
+        <div class="div1 radius-1-1">
+            <p>border-radius: 100%;</p>
+        </div>
+        <div class="div1 radius-2">
+            <p>border-top-left-radius: 50%;</p>
+        </div>
+        <div class="div1 radius-3">
+            <p>border-top-left-radius: 100%;</p>
+        </div>
+        <div class="div1 radius-4">
+            <p>border-top-left-radius: 50%;</p>
+            <p>border-top-right-radius: 50%;</p>
+        </div>
+        <div class="div1 radius-5">
+            <p>border-top-left-radius: 100px;</p>
+            <p>border-top-right-radius: 100px;</p>
+        </div>
+        <div class="div1 radius-6">
+            <p>border-top-left-radius: 200px 100px;</p>
+        </div>
+        <div class="div1 radius-7">
+            <p>border-top-left-radius: 200px 50px;</p>
+        </div>
+        <div class="div1 radius-8">
+            <p>border-top-left-radius: 200px 50px;</p>
+            <p>border-bottom-left-radius: 200px 50px;</p>
+        </div>
+        <div class="div1 radius-9">
+            <p>border-top-left-radius: 200px 50px;</p>
+        </div>
+    
+        <div class="div1 div2 radius-10">
+            <p>border-top-left-radius: 200px 150px;</p>
+            <p>border-bottom-left-radius: 200px 150px;</p>
+        </div>
+    
+        <div class="div1 div2 radius-11">
+            <p>border-top-right-radius: 200px 150px;</p>
+            <p>border-bottom-right-radius: 200px 150px;</p>
+        </div>
+        <div class="div1 div2 radius-11-1">
+            <p>box-sizing: border-box;</p>
+            <p>border-top-right-radius: 200px 150px;</p>
+            <p>border-bottom-right-radius: 200px 150px;</p>
+        </div>
+        <div class="div1 div2 radius-12">
+            <p>border-top-right-radius: 215px 165px;</p>
+            <p>border-bottom-right-radius: 215px 165px;</p>
+        </div>
+    </div>
+
+</body>
+</html>

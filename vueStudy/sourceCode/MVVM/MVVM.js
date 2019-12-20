@@ -1,5 +1,6 @@
 import observer from './observer';
 import Compile from './compile';
+import Watcher from './watcher';
 
 class MVVM {
     constructor (options) {
@@ -13,6 +14,8 @@ class MVVM {
        Object.keys(data).forEach(key =>  this._proxyData(key));
 
        this._initComputed();
+
+       this._initWatch();
 
        this.$compile = new Compile(options.el || document.body, this)
     }
@@ -42,6 +45,16 @@ class MVVM {
                             : computed[key].get,
                     set: function() {}
                 });
+            });
+        }
+    }
+
+    _initWatch() {
+        var me = this;
+        var watch = this.$options.watch;
+        if (typeof watch === 'object') {
+            Object.keys(watch).forEach(function(key) {
+                new Watcher(me, key, watch[key]);
             });
         }
     }

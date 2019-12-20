@@ -37,6 +37,13 @@
             htmlParam1: '<p style=color:pink>这是html</p>'
         },
 
+        watch: {
+            inputParam1 (value, oldValue) {
+                console.log(`value:${value},oldValue:${oldValue}`);
+                console.log(this.inputParam1,this.htmlParam1);
+            }
+        },
+
         computed: {
             getHelloWord: function() {
                 return this.param1 + this.param2 + this.inputParam1;
